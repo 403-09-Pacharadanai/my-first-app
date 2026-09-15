@@ -67,18 +67,40 @@ def show_result_dialog(ans1, ans2, ans3, ans4 ans5, ans6):
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
       # ตรวจข้อ 4
-    if u_ans3 == "ancient":
+    if u_ans4 == "ancient":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
     # ตรวจข้อ 5
-    if u_ans4 == "monkey":
+    if u_ans5 == "monkey":
         st.success("✅ ข้อ 5: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+
+     # ตรวจข้อ 6
+    if u_ans6 == "nobility":
+        st.success("✅ ข้อ 5: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+
+     if score == 6:
+         st.success("😜 คุณเป็นราชาลิงเกาลัด")
+   elif score == 5:
+         st.success("🧐 คุณเป็นราชณิกุลลิงเกาลัด")
+   elif score == 4:
+         st.info("😳 คุณเป็นสมาร์ทลิงเกาลัด")
+   elif score == 3:
+         st.info("😖 คุณเป็นลิงเกาลัดชั้นประถม")
+   elif score == 2:
+         st.warning("😭 คุณเป็นลิงเกาลัดกินขี้มูก")
+   elif score == 1:
+         st.warning("😱 คุณเป็นลิงเกาลัดจัณฑาล")
+   else:
+         st.error("👽 คุณคือผงลิงเกาลัด")
 
 
 # ----------------------------------------------------
