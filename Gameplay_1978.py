@@ -124,7 +124,7 @@ st.divider()
 
 # 3. ช่องรับคำตอบ (แก้ไขค่า value ให้ตรงกับ session_state ของตัวเอง)
 ans1 = st.text_input(
-    "ข้อ 1: C___t n_ts - เกาลัด. 🌰",
+    "ข้อ 1: C___t n_t - เกาลัด. 🌰",
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
