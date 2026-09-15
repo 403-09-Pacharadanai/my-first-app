@@ -124,27 +124,27 @@ st.divider()
 
 # 3. ช่องรับคำตอบ (แก้ไขค่า value ให้ตรงกับ session_state ของตัวเอง)
 ans1 = st.text_input(
-    "ข้อ 1: C___t n_t - เกาลัด. 🌰",
+    "ข้อ 1: c___t n_t - เกาลัด. 🌰",
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
-    "ข้อ 2: E___ns__e - แพง. 🤑",
+    "ข้อ 2: e___ns__e - แพง. 🤑",
     value=st.session_state.ans2_val,
 )
 ans3 = st.text_input(
-    "ข้อ 3: E_t___ce - ทางเข้า. 🚪",
+    "ข้อ 3: e_t___ce - ทางเข้า. 🚪",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: A____nt - โบราณ. 🏺",
+    "ข้อ 4: a____nt - โบราณ. 🏺",
     value=st.session_state.ans4_val,
 )
 ans5 = st.text_input(
-    "ข้อ 5: M__k__ - ลิง. 🐒🙈🙉🙊",
+    "ข้อ 5: m__k__ - ลิง. 🐒🙈🙉🙊",
     value=st.session_state.ans5_val,
 )
 ans6 = st.text_input(
-    "ข้อ 6: N___li__ - ขุนนาง. 🤴🏰",
+    "ข้อ 6: n___li__ - ขุนนาง. 🤴🏰",
     value=st.session_state.ans6_val,
 )
 
