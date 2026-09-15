@@ -117,7 +117,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
         st.session_state.is_ended = True
         st.rerun()
 
-  st.divider()
+st.divider()
 
 # 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
 ans1 = st.text_input(
