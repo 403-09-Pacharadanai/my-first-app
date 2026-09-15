@@ -38,12 +38,13 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6):
     st.balloons()
     score = 0
 
+    # แก้ไขการกำหนดตัวแปรให้ตรงข้อ
     u_ans1 = ans1.strip().lower()
     u_ans2 = ans2.strip().lower()
     u_ans3 = ans3.strip().lower()
     u_ans4 = ans4.strip().lower()
-    u_ans1 = ans5.strip().lower()
-    u_ans2 = ans6.strip().lower()
+    u_ans5 = ans5.strip().lower()
+    u_ans6 = ans6.strip().lower()
 
     # ตรวจข้อ 1
     if u_ans1 == "chest nut":
@@ -66,27 +67,28 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6):
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
-      # ตรวจข้อ 4
+    # ตรวจข้อ 4
     if u_ans4 == "ancient":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
+        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
 
     # ตรวจข้อ 5
     if u_ans5 == "monkey":
         st.success("✅ ข้อ 5: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+        st.error(f"❌ ข้อ 5: ยังไม่ถูกต้อง (คุณตอบ '{u_ans5}')")
 
-     # ตรวจข้อ 6
+    # ตรวจข้อ 6
     if u_ans6 == "nobility":
-        st.success("✅ ข้อ 5: ถูกต้อง")
+        st.success("✅ ข้อ 6: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+        st.error(f"❌ ข้อ 6: ยังไม่ถูกต้อง (คุณตอบ '{u_ans6}')")
 
+    # สรุปผลคะแนน 6 ระดับ
     if score == 6:
         st.success("😜 คุณเป็นราชาลิงเกาลัด")
     elif score == 5:
@@ -101,6 +103,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6):
         st.warning("😱 คุณเป็นลิงเกาลัดจัณฑาล")
     else:
         st.error("👽 คุณคือผงลิงเกาลัด")
+
 
 # ----------------------------------------------------
 # 1. ปุ่มเริ่มเล่นเกม
@@ -119,10 +122,10 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 st.divider()
 
-# 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
+# 3. ช่องรับคำตอบ (แก้ไขค่า value ให้ตรงกับ session_state ของตัวเอง)
 ans1 = st.text_input(
     "ข้อ 1: C___t n_ts - เกาลัด. 🌰",
-    value=st.session_state.ans3_val,
+    value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
     "ข้อ 2: E___ns__e - แพง. 🤑",
@@ -138,11 +141,11 @@ ans4 = st.text_input(
 )
 ans5 = st.text_input(
     "ข้อ 5: M__k__ - ลิง. 🐒🙈🙉🙊",
-    value=st.session_state.ans3_val,
+    value=st.session_state.ans5_val,
 )
 ans6 = st.text_input(
     "ข้อ 6: N___li__ - ขุนนาง. 🤴🏰",
-    value=st.session_state.ans4_val,
+    value=st.session_state.ans6_val,
 )
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
@@ -162,6 +165,6 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
     time.sleep(1)
     st.rerun()
 
-# 5. แสดง Dialog ผลลัพธ์
+# 5. แสดง Dialog ผลลัพธ์ (แก้ไขการส่งพารามิเตอร์ให้ครบทั้ง ans1 ถึง ans6)
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2, ans3, ans4, ans3, ans4)
+    show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6)
